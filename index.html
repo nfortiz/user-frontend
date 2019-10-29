@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User view</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="main-container">    
+        <aside class="info-container">
+            <div class="user-container">
+                <div class="user-img">
+                    <p>NO</p>
+                </div>
+                <div class="user-detail">
+                    <h3 class="user-name">Natalia Ortegon</h3>
+                    <p class="user-position">Finace Analyst</p>
+                </div>
+            </div>
+            <div class="side-menu-container">
+                <ul>
+                    <li><a class="side-menu-link active" href="#"><i class="material-icons">receipt</i>Expenses</a></li>
+                    <li><a class="side-menu-link" href="#"><i class="material-icons">signal_cellular_alt</i>Reports</a></li>
+                </ul>
+            </div>
+        </aside>
+        <header>
+            <nav class="nav-bar">
+                <ul>
+                    <li><a class="nav-link active" href="#">Trips</a></li>
+                    <li><a class="nav-link" href="#">Other Expenses</a></li>
+                </ul>
+            </nav>
+            <span>
+                <i class="material-icons">notifications_none</i>
+            </span> 
+        </header>
+        <section class="expense-list">
+            <div class="top-menu-container">
+                <button class="add-expense">CREATE AN EXPENSE <i class="material-icons">add</i></button>
+            </div>
+            <div class="list-container">
+                <div class="central-icon-container">
+                    <i class="material-icons">folder_open</i>
+                    <p class="central-icon-title">You don’t have any expenses yet</p>
+                    <p class="central-icon-explanation">create a new expense using the button above or clicking here. </p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+</html>
