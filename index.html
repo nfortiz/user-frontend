@@ -40,7 +40,9 @@
         </header>
         <section class="expense-list">
             <div class="top-menu-container">
-                <button class="add-expense">CREATE AN EXPENSE <i class="material-icons">add</i></button>
+                <button class="add-expense" data-toggle="modal" data-target="addExpenseModal">
+                    CREATE AN EXPENSE <i class="material-icons">add</i>
+                </button>
             </div>
             <div class="list-container">
                 <div class="central-icon-container">
@@ -50,6 +52,43 @@
                 </div>
             </div>
         </section>
+    </div>
+    <div id="addExpenseModal" class="modal" rol="dialog" type="button">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>New Expense</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                
+                <select name="type" id="type" class="custom-select" required>
+                    <option value="" selected>Type</option>
+                    <option value="trip">Trip</option>
+                    <option value="internal_events">Internal Events</option>
+                    <option value="trainings">Trainings</option>
+                    <option value="client_visit">Client visit</option>
+                    <option value="team_building">Team Building</option>
+                    <option value="others">Others</option>
+                </select>
+                <div class="modal-form">
+                    <form id="trip" action="">
+                        <div class="input-group">
+                            <input type="text" name="origin" id="origin" placeholder="Origin">
+                            <input type="text" name="destination" id="destination" placeholder="Destination">
+                        </div>
+                        <div class="input-group">
+                            <input type="date" name="startDate" id="startDate" placeholder="Start Date">
+                            <input type="date" name="endDate" id="endDate" placeholder="End Date">
+                        </div>
+                        <input type="text" name="purpose" id="purpose" placeholder="Purpose">
+                        <input type="text" name="proyectCode" id="proyectCode" placeholder="Proyect Code">
+                        <input type="submit" value=" SAVE">
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="./js/main.js"></script>
 </body>
