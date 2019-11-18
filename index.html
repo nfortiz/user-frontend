@@ -12,12 +12,12 @@
     <div class="main-container">    
         <aside class="info-container">
             <div class="user-container">
-                <div class="user-img">
+                <div class="user-img center">
                     <p>NO</p>
                 </div>
                 <div class="user-detail">
                     <h3 class="user-name">Natalia Ortegon</h3>
-                    <p class="user-position">Finace Analyst</p>
+                    <p class="user-position">Finance Analyst</p>
                 </div>
             </div>
             <div class="side-menu-container">
@@ -30,8 +30,8 @@
         <header>
             <nav class="nav-bar">
                 <ul>
-                    <li><a class="nav-link active" href="#">Trips</a></li>
-                    <li><a class="nav-link" href="#">Other Expenses</a></li>
+                    <li><a class="nav-link active" href="#" id="tripLink">Trips</a></li>
+                    <li><a class="nav-link" href="#" id="OtherExpensesLink">Other Expenses</a></li>
                 </ul>
             </nav>
             <span>
@@ -40,12 +40,18 @@
         </header>
         <section class="expense-list">
             <div class="top-menu-container">
-                <button class="add-expense" data-toggle="modal" data-target="addExpenseModal">
+                <button class="btn-menu hide" id="export">
+                    EXPORT TO <i class="material-icons">arrow_downward</i>
+                </button>
+                <button class="btn-menu hide" id="share">
+                    SHARE <i class="material-icons">signal_cellular_alt</i>
+                </button>
+                <button class="btn-menu" data-toggle="modal" data-target="addExpenseModal">
                     CREATE AN EXPENSE <i class="material-icons">add</i>
                 </button>
             </div>
-            <div class="list-container">
-                <div class="central-icon-container">
+            <div class="center" id="list">
+                <div class="central-icon-container center" data-toggle="modal" data-target="addExpenseModal">
                     <i class="material-icons">folder_open</i>
                     <p class="central-icon-title">You don’t have any expenses yet</p>
                     <p class="central-icon-explanation">create a new expense using the button above or clicking here. </p>
@@ -64,7 +70,7 @@
             <div class="modal-body">
                 
                 <select name="type" id="type" class="custom-select" required>
-                    <option value="" selected>Type</option>
+                    <option value="" selected disabled>Type</option>
                     <option value="trip">Trip</option>
                     <option value="internal_events">Internal Events</option>
                     <option value="trainings">Trainings</option>
@@ -82,14 +88,25 @@
                             <input type="date" name="startDate" id="startDate" placeholder="Start Date">
                             <input type="date" name="endDate" id="endDate" placeholder="End Date">
                         </div>
-                        <input type="text" name="purpose" id="purpose" placeholder="Purpose">
-                        <input type="text" name="proyectCode" id="proyectCode" placeholder="Proyect Code">
-                        <input type="submit" value=" SAVE">
+                        <input class="large" type="text" name="purpose" id="purpose" placeholder="Purpose">
+                        <input class="large" type="text" name="proyectCode" id="proyectCode" placeholder="Proyect Code">
+                        <div class="input-group">
+                            <input type="number" name="budget" id="budget" placeholder="Budget">                            
+                            <select name="currency" id="currency" required>
+                                <option value="" selected disabled>Currency</option>
+                                <option value="US">US</option>
+                                <option value="COP">COP</option>
+                            </select>                            
+                            <input type="number" name="currencyRate" id="currencyRate" placeholder="Currency Rate">
+                        </div>
+                        <input type="submit" id="submit-expense" value="SAVE">
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <script src="./js/main.js"></script>
+    <script src="./mocks/trips.json"></script>
+    <script type="module" src="./utils/tripServices.js"></script>
+    <script type="module" src="./js/main.js"></script>
 </body>
 </html>
